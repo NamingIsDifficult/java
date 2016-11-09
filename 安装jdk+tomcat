@@ -1,0 +1,13 @@
+	下载jdk,安装至E:\\javaEnv
+	设置环境变量：JAVA_HOME=E:\javaEnv\jdk
+				 CLASSPATH=.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;
+    下载apache-tomcat-8.5.6-windows-x64.zip，解压至E:\\tomcat
+	设置环境变量：CATALINA_BASE=E:\tomcat\apache-tomcat-8.5.6
+				 CATALINA_HOME=E:\tomcat\apache-tomcat-8.5.6
+				 JRE_HOME=E:\javaEnv\jre
+	cmd cd E:\tomcat\apache-tomcat-8.5.6\bin    
+	    startup.bat
+	访问：http://localhost:8080/
+	如果启动失败，且原因为端口被占用，则使用以下命令查看占用端口的pid,
+	netstat -ano|findstr 8080
+	使用tasklist查看占用的进程，使用taskkill杀死进程，或手动结束
