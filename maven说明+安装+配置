@@ -1,0 +1,42 @@
+1.	maven是什么？
+	
+	Maven这个单词来自于意第绪语（犹太语），意为知识的积累，最初在Jakata Turbine项目中用来简化构建过程。
+	使用它的原因是，当时有一些项目（有各自Ant build文件），仅有细微的差别，而JAR文件都由CVS（CVS是一种早期的源代码版本控制软件）来维护。于是希望有一种标准化的方式构建项目，一个清晰的方式定义项目的组成，一个容易的方式发布项目的信息，以及一种简单的方式在多个项目中共享JARs。（源于百度百科）
+	简单粗略的说,maven是一个包含管理依赖jar功能的系统。
+	maven是一个项目管理工具,它包含一个项目对象模型(Project Object Model,pom.xml),一组标准集合,一个项目生命周期,一个依赖管理系统，和用来运行定义在生命周期阶段(phase)中插件(plugin)目标(goal)的逻辑。当你使用Maven的时候，你用一个明确定义的项目对象模型来描述你的项目，然后Maven可以应用横切的逻辑，这些逻辑来自一组共享的（或者自定义的）插件。
+	Maven 有一个生命周期，当你运行 mvn install 的时候被调用。这条命令告诉 Maven 执行一系列的有序的步骤，直到到达你指定的生命周期。遍历生命周期旅途中的一个影响就是，Maven 运行了许多默认的插件目标，这些目标完成了像编译和创建一个 JAR 文件这样的工作。
+	此外，Maven能够很方便的帮你管理项目报告，生成站点，管理JAR文件，等等。
+	常用命令
+	mvn archetype：create 创建Maven项目
+	mvn compile 编译源代码
+	mvn deploy 发布项目
+	mvn test-compile 编译测试源代码
+	mvn test 运行应用程序中的单元测试
+	mvn site 生成项目相关信息的网站
+	mvn clean 清除项目目录中的生成结果
+	mvn package 根据项目生成的jar
+	mvn install 在本地Repository中安装jar
+	mvn eclipse:eclipse 生成eclipse项目文件
+	mvnjetty:run 启动jetty服务
+	mvntomcat:run 启动tomcat服务
+	mvn clean package -Dmaven.test.skip=true:清除以前的包后重新打包，跳过测试类
+	
+2.安装maven
+
+	1.在官网上下载安装文件http://maven.apache.org/download.cgi，window环境的话，选择apache-maven-3.3.9-bin.zip。
+	2.解压至工作目录，eg:D://maven
+	3.配置环境变量
+		3.1, MAVEN_HOME=D:\maven\apache-maven-3.3.9
+		3.2, PATH+=%MAVEN_HOME%\bin;
+	4.运行cmd, mvn -v，如果设置成功，则会打印出相应信息。
+	
+3.配置maven至idea
+
+	1.打开D:\maven\apache-maven-3.3.9\conf\settings.xml,添加新节点 <localRepository>D:\maven\Repository</localRepository>
+	  | The path to the local repository maven will use to store artifacts.
+      |
+   	  | Default: ${user.home}/.m2/repository
+	2.在idea中选择File->settings->build,execution,deployment->maven
+	3.设置maven home directory为D:\maven\apache-maven-3.3.9
+	4.设置user settings file为D:\maven\apache-maven-3.3.9\conf\settings.xml
+	5.local repository会自动转换
