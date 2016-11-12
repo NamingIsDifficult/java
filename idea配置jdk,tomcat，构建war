@@ -18,3 +18,7 @@
 	4.进入default settins->build,execution,deployment->application server，点击+,选择tomcat选项
 	5：选择tomcat home为你的tomcat下载（安装即解压就行）路径如：E:\IDE\tomcat-8.0.26
 	6：点击OK，tomcat配置成功！
+
+3.构建war（web archive）
+
+	1.Build->Build artifect->配置Output Derectory为相应的war输出路径
