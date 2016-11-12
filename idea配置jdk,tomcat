@@ -1,0 +1,20 @@
+1.配置jdk
+
+	IDEA可以为每个项目指定不同版本的JDK，并且需要开发者手动配置项目的所使用的JDK版本。配置方法如下：
+
+	（1）单击File | Project Structure菜单项，打开ProjectStructure对话框；
+
+	（2）在左侧列表框中，选择SDKs列表项，进入SDK配置页面；
+
+	（3）若中间的SDK列表框没有选项，则单击“+”号创建一个JDK列表项；
+
+	（4）选择JDK列表项，在SDK ’JDK’选项卡页面中，单击JDK home path项目的浏览按钮，定位JDK安装路径并保存。
+	
+2.配置tomcat
+
+	1.进入初始页面，点击右下角configuration中的plugins
+	2.在搜索框输入tomcat，并选中，点击OK。
+	3：返回后选择settings。
+	4.进入default settins->build,execution,deployment->application server，点击+,选择tomcat选项
+	5：选择tomcat home为你的tomcat下载（安装即解压就行）路径如：E:\IDE\tomcat-8.0.26
+	6：点击OK，tomcat配置成功！
