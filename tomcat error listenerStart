@@ -1,0 +1,28 @@
+	启动idea中配置的tomcat,build success,deploy报错：error listenerStart,造成该问题的原因众多，需通过配置tomcat的log文件来获得详细的错误原因。
+	
+	配置tomcat：
+	
+	1.准备文件：log4j.jar 下载地址 : http://www.apache.org/dist/logging/log4j/
+	commons-logging.jar,地址：http://www.apache.org/dist/commons/logging/binaries/
+	//以上文件可以不准备。
+	
+	
+	
+    2.log4j配置文件:在不能启动的Web应用目录下WEB-INF/classes目录中，新建logging.properties文件，内容参考如下：
+	In order to get better debug logging, place a file called "logging.properties" in the webapps WEB-INF/classes folder.  Then, your server logs will show descriptive errors for debugging:
+	localhost:8080/tomcat-7.0-doc/logging.html
+	配置内容为:
+	
+	handlers = org.apache.juli.FileHandler, java.util.logging.ConsoleHandler
+
+	############################################################
+	# Handler specific properties.
+	# Describes specific configuration info for Handlers.
+	############################################################
+
+	org.apache.juli.FileHandler.level = FINE
+	org.apache.juli.FileHandler.directory = ${catalina.base}/logs
+	org.apache.juli.FileHandler.prefix = error-debug.
+
+	java.util.logging.ConsoleHandler.level = FINE
+	java.util.logging.ConsoleHandler.formatter = java.util.logging.SimpleFormatter
