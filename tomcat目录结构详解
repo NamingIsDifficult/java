@@ -1,0 +1,13 @@
+1.安装包
+tar.gz文件是Linux操作系统下的安装版本
+exe文件是Windows系统下的安装版本
+zip文件是Windows系统下的压缩版本
+
+2.TOMCAT的目录结构
+/bin：存放windows或Linux平台上启动和关闭Tomcat的脚本文件
+/conf：存放Tomcat服务器的各种全局配置文件，其中最重要的是server.xml和web.xml
+/lib：存放Tomcat服务器以及所有web应用都可以访问的jar文件
+/logs：存放Tomcat执行时的日志文件
+/temp:存放运行过程中产生的临时文件
+/webapps：Tomcat的主要Web发布目录，默认情况下把Web应用文件放于此目录
+/work：存放JSP编译后产生的class文件
